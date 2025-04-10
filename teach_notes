@@ -1,1 +1,144 @@
+// Function overloading in c++
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Main {
+    int a, b, d;
+    string c;
+
+public:
+    // Fun 1
+    void fun(int a, int b) {
+        this->a = a;
+        this->b = b;
+    }
+
+    // Fun 2
+    void fun(int a, int b, int d) {
+        this->a = a;
+        this->b = b;
+        this->d = d;
+    }
+
+    // Fun 3
+    void fun(int a, string c) {
+        this->a = a;
+        this->c = c;
+    }
+
+    // Fun 4
+    void fun(int a, int b, string c, int d) {
+        this->a = a;
+        this->b = b;
+        this->c = c;
+        this->d = d;
+    }
+
+    void display() {
+        cout << "The value of a = " << a << endl;
+        cout << "The value of b = " << b << endl;
+        cout << "The value of c = " << c << endl;
+        cout << "The value of d = " << d << endl;
+    }
+};
+
+int main() {
+    Main ob;
+    ob.fun(5, 15, "shweta", 45); // Function call
+    ob.display();
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------
+// Function or method overloading in JAVA
+
+import java.util.*;
+class main{     //function overloading --> function overloading is an example of compile time polymorphism
+    int a,b,d;
+    String c;
+
+    //fun 1
+    void fun(int a,int b){//same function name with diff parameter 
+        this.a=a;
+        this.b=b;
+    }
+    //fun 2
+    void fun(int a,int b,int d){//same function name with diff parameter 
+        this.a=a;
+        this.b=b;
+        this.d=d;
+    }
+    //fun 3
+    void fun(int a , String c){// parametarize constructor
+        this.a=a;
+        this.c=c;
+    }
+    //fun 4
+    void fun(int a,int b,String c,int d){//same function name with diff parameter 
+        this.a=a;
+        this.b=b;
+        this.c=c;
+        this.d=d;
+    }
+    void display(){
+        System.out.println("the value of a = "+a);//+a --> ,a in c++
+        System.out.println("the value of b = "+b);//int
+        System.out.println("the value of c = "+c);// String
+        System.out.println("the value of d = "+d);
+    }
+public static void main(String[] args) {
+    int a,b;
+    Scanner sc = new Scanner(System.in);
+    main ob = new main();
+
+    System.out.print("enter the value of a = ");
+    a = sc.nextInt();
+    System.out.print("enter the value of b = ");
+    b = sc.nextInt();
+
+    ob.fun(a,b,"shweta",45);//function call 
+    System.out.println();
+    ob.display();
+
+}
+}
+
+// Function or method overriding in JAVA
+
+import java.util.*;
+
+class demo {    //function overriding --> function overriding is an example of run time polymorphism.
+
+    int a,b;
+
+    void fun(int a,int b){
+        this.a=a; //this keyword -> current instance of a function 
+        this.b=b;
+    }
+}
+
+class demo2 extends demo {
+    int c;
+    void fun(int a , int b ,int c){
+        this.a=a;
+        this.b=b;
+        this.c=c;
+    }
+
+    void display(){
+        System.out.println("the value of a = "+a);
+        System.out.println("the value of b = "+b);
+        System.out.println("the value of c = "+c);
+    }
+}
+class main2  {
+    public static void main(String args[])
+    {
+        demo2 ob = new demo2(); //dynamic heep memory allocation 
+        ob.fun(12,26,18);
+        ob.display();
+    }
+}
