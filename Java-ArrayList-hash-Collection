@@ -48,3 +48,54 @@ public class Main{
 
     }
 }
+
+2. hash Map
+------------------------------------------------------------------------------------------------
+import java.util.HashMap;
+import java.util.Map;
+
+public class hash {
+    public static void main(String[] args) {
+        HashMap <String , Integer> map = new HashMap<>();
+
+        // Insertion
+        map . put("India" , 120);
+        map . put("Us" , 30);
+        map . put("China" , 180);
+        System.out.println(map);
+
+        // Search operation (Look Up)
+        // 1st method by using "constainskey({Enter the key});"
+        // --> this Returns true if this map contains a mapping for the specified key ;
+        if (map.containsKey("China"))
+        {
+            System.out.println("The value is exist");
+        }else{
+            System.out.println("the value dose'nt exist");
+        }
+
+        // 2nd method by using "nap.get({enter the key})"
+        //Returns the value to which the specified key is mapped,
+        // or null if this map contains no mapping for the key
+        System.out.println(map.get("China"));
+        System.out.println(map.get("pakistan"));
+        System.out.println();
+
+        // two types of loops
+        // 1st type
+        int arr[] = {12 , 15 , 18};
+        for (int i=0 ; i < 3 ; i++ )
+        {
+            System.out.print(arr[i]+" ");
+
+        }
+        System.out.println();
+        
+        // 2nd type
+        for (int val : arr)
+        {
+            System.out.print(val + " ");
+        }
+        System.out.println();
+    }
+}
